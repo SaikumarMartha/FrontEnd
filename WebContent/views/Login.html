@@ -1,24 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
 
-
-</head>
-<body data-ng-app="myApp" data-ng-controller='UserController'>
-
- <div class="wrapper">
-      
-      <h2 class="form-signin-heading">Please login</h2>
-      <input type="text" class="form-control" name="userName" placeholder="Email Address" required="" autofocus="" data-ng-model="user.userName"/>
-      <input type="password" class="form-control" name="password" placeholder="Password" required="" data-ng-model="user.password" style="padding-top:10px;"/>     
-      <label class="checkbox">
-        <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
-      </label>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" data-ng-click="login()">Login</button>   
-    
-  </div>
-
-</body>
-</html>
+ <div data-ng-controller='UserController'>
+<div class="container" align="justify">
+		<div class="row vertical-offset-100">
+		    <div class="col-md-6 col-md-offset-14">
+		    	<div class="panel panel-default">
+					<div class="panel-heading">
+				    	<h3 class="panel-title" align="center"><i>Please Login</i></h3>
+				 	</div>
+					<fieldset><br>
+					
+						<div class="form-group" align="center">
+							<label class="col-md-4 control-label"><i>Enter UserName</i></label><input type="text" data-ng-model="user.username"><br>
+						</div>
+						<div class="form-group" align="center">
+							<label class="col-md-4 control-label"><i>Enter Password</i></label><input type="password" data-ng-model="user.password"><br>
+						</div>
+				
+						<div class="form-group" align="center"><input type="submit" value="login" data-ng-click="login()"><br></div><br>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+</div>
+</div>

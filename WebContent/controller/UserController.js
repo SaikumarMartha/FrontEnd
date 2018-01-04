@@ -1,3 +1,7 @@
+       
+
+
+
 app.controller('UserController',function(UserService,$scope,$location,$rootScope,$cookieStore)
         {
     
@@ -42,7 +46,7 @@ app.controller('UserController',function(UserService,$scope,$location,$rootScope
 			console.log("logout start")
 			$rootScope.currentUser=response.data
 			$cookieStore.put('currentUser',response.data)
-			$location.path('/home')
+			$location.path('/login')
 		},function(response){//401,500....
 			if(response.status==401){
 				$scope.error=response.data//errorClazz in JSON fmt

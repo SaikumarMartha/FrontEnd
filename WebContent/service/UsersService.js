@@ -1,3 +1,5 @@
+//custom service
+
 app.factory('UserService',function($http)
 {
 	
@@ -18,13 +20,11 @@ app.factory('UserService',function($http)
 
 
 userService.logout=function(user){
+	
 	return $http.get(BASSE_URL +"/logout",user)
 
 }
-/*
-userService.login=function(user){
-	return $http.post(BASSE_URL +"/home",user)
-}*/
+
 
     
 return userService;
