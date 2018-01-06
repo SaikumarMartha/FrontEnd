@@ -20,11 +20,28 @@
                 controller  : 'UserController'
             })
 
+	        
+            	.when('/addblog', {
+		        templateUrl:'views/blogform.html', //V to Controller
+		        controller:'BlogPostController'
+	        })
+	        .when('/getblogs',  {
+		        templateUrl:'views/blogslist.html',//Controller to V
+		        controller:'BlogPostController'
+	        })
+	        .when('/admin/getblog/:id',{
+		        templateUrl:'views/approvalform.html',
+		        controller:'BlogPostDetailsController'
+	        })
+	        .when('/getblog/:id',{
+		        templateUrl:'views/blogdetails.html',
+		        controller:'BlogPostDetailsController'
+	})
             // route for the contact page
             .when('/Home', {
                 templateUrl : 'views/Home.html',
                 controller  : 'HomeController'
-            });
+            })
     });
 
     // create the controller and inject Angular's $scope
