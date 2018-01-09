@@ -59,10 +59,12 @@
     		  
  				 <li><a href="#login" data-ng-hide="currentUser.firstname">Login</a></li>
  				 <li><a href="#register" data-ng-click="register()"data-ng-hide="currentUser.firstname">Register</a></li>
-    		    <li><a href="" ng-show="currentUser.username">Welcome {{currentUser.username}}</a></li>
+ 				 <li><a href="#/profilepic" data-ng-show="currentUser.username"><img src="http://localhost:8081/middleware/getimage/{{currentUser.username}}" alt="upload Picture" width="30px" height="30px" class="img-rounded"></a></li>
+    		    <li><a href="" ng-show="currentUser.username">Welcome {{currentUser.username}} &nbsp; {{currentUser.lastname}}</a></li>
+    		    <li><a href="#/edituserprofile" data-ng-show="currentUser.firstname">Edit Profile</a></li>
     		    <li><a href="#/savejob" data-ng-show="currentUser.role=='ADMIN'">Save Job Details</a><li>
                 <li><a href="#/getalljobs" data-ng-show="currentUser.firstname">GetAllJobs</a></li>
-    		    <li><a href="" data-ng-click="logout()" data-ng-show="currentUser.firstname">logout</a></li>
+    		    <li><a href="" data-ng-click="logout()" ng-controller="UserController" data-ng-show="currentUser.firstname">logout</a></li>
         		  <li class="dropdown">
     	     			   <a href="" class="dropdown-toggle" data-toggle="dropdown" data-ng-show="currentUser.firstname">Blog<b class="caret"></b></a>
  			 				<ul class="dropdown-menu">
