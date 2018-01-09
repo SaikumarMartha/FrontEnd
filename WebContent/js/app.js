@@ -20,7 +20,14 @@
                 controller  : 'UserController'
             })
 
-	        
+	         .when('/savejob',{
+		          templateUrl:'views/jobform.html',
+		          controller:'JobController'
+	        })
+	         .when('/getalljobs',{
+		          templateUrl:'views/jobtitle.html',
+		          controller:'JobController'
+	        })
             	.when('/addblog', {
 		        templateUrl:'views/blogform.html', //V to Controller
 		        controller:'BlogPostController'
