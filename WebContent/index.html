@@ -19,16 +19,28 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet" />
   	<script src="js/app.js"></script>
+  	
   	<script src="service/UsersService.js"></script>
     <script src="controller/UserController.js"></script>
+    
     <script src="service/BlogService.js"></script>
     <script src="controller/BlogController.js"></script>
     <script src="controller/BlogDetailsController.js"></script>
+  	
   	 <script src="service/homeservice.js"></script>
     <script src="controller/homeController.js"></script>
+    
      <script src="service/JobService.js"></script>
     <script src="controller/JobController.js"></script>
-  
+    
+    <script src="service/friendservice.js"></script>
+    <script src="controller/friendcontroller.js"></script>
+    
+    <script type="text/javascript" src="controller/chatcontroller.js"></script>
+    <script type="text/javascript" src="service/chatservice.js"></script>
+    
+    <script src="js/sockjs/sockjs.js"></script>
+    <script src="js/stomp/dist/stomp.js"></script>
 
   	
 </head>
@@ -36,7 +48,7 @@
 <body>
 
 
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-inverse">
 		    <div class="container-fluid">
 		    <button type="button" class="navbar-toggle collapsed" 
    data-toggle="collapse" data-target="#collapse-example" aria-expanded="false">
@@ -73,19 +85,33 @@
 				 </ul>
  					</li>
  					
- 				<li class="dropdown">
- 			<a href="" class="dropdown-toggle" data-toggle="dropdown" data-ng-show="currentUser.username">
- 			<span class="glyphicon glyphicon-globe" data-ng-click="updateLength()">
- 			<span class="rv-number-notification" ng-if="">{{}notificationNotViewedLength}</span>
- 			</span>
- 			</a>
- 			<ul class="dropdown-menu">
- 			<li ng-repeat="notification in notificationNotViewed">
- 			<a href="" data-ng-click="" style="color:red">{{noification.blogTitle}} is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
- 			 <li ng-repeat="notification in notificationNotViewed">
- 			<a href="" data-ng-click="" style="color:red">{{noification.blogTitle}} is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>			
- 			</ul>		</li>
+ 				         <li class="dropdown">
+ 			             <a href="" class="dropdown-toggle" data-toggle="dropdown" data-ng-show="currentUser.username">
+ 			             <span class="glyphicon glyphicon-globe" data-ng-click="updateLength()">
+ 			             <span class="rv-number-notification" ng-if="">{{}notificationNotViewedLength}</span>
+ 			             </span>
+ 			             </a>
+ 			             <ul class="dropdown-menu">
+ 			             <li ng-repeat="notification in notificationNotViewed">
+ 			             <a href="" data-ng-click="" style="color:red">{{noification.blogTitle}} is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>
+ 			             <li ng-repeat="notification in notificationNotViewed">
+ 			             <a href="" data-ng-click="" style="color:red">{{noification.blogTitle}} is {{notification.approvalStatus}} {{notification.rejectionReason}}</a></li>			
+ 			             </ul></li>
    
+   
+   
+   
+                        <li class="dropdown" ng-show="currentUser.username" style="padding-top: 10px; font-weight: bold; background-color: #286090;">
+						<a href="" class="dropdown-toggle" data-toggle="dropdown" ng-show="currentUser.username" 
+						style="color: white; font-weight: bold; text-decoration: none;border-style:none; background-color: #286090; font-size: 17px;">
+						<i class="fa fa-users " style="font-size:20px;color:white;"></i> &nbsp;<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+						<li><a href="#/suggestedusers">List of suggested users</a></li>
+							<li><a href="#/pendingrequests">Pending Requests</a></li>
+						<li><a href="#/friends">Friends List</a></li></ul>
+						</span>
+						</li>
+						<li><a href="#/chat" ng-show="currentUser.username">chat </a></li>
        </ul>
   </div></div>
 </nav>

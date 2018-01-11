@@ -30,18 +30,34 @@ app.config(function($routeProvider, $locationProvider) {
 		templateUrl : 'views/jobtitle.html',
 		controller : 'JobController'
 	
+	})
 	
+	.when('/suggestedusers',{
+		templateUrl:'views/suggestedusers.html',
+		controller:'FriendController'
+	})
+	.when('/pendingrequests',{
+		templateUrl:'views/pendingrequests.html',
+		controller:'FriendController'
+	})
+	.when('/friends',{
+		templateUrl:'views/friendslist.html',
+		controller:'FriendController'		
+	})
 	
-	}).when('/addblog', {
+	.when('/addblog', {
 		templateUrl : 'views/blogform.html', // V to Controller
 		controller : 'BlogPostController'
-	}).when('/getblogs', {
+	})
+	.when('/getblogs', {
 		templateUrl : 'views/blogslist.html',// Controller to V
 		controller : 'BlogPostController'
-	}).when('/admin/getblog/:id', {
+	})
+	.when('/admin/getblog/:id', {
 		templateUrl : 'views/approvalform.html',
 		controller : 'BlogPostDetailsController'
-	}).when('/getblog/:id', {
+	})
+	.when('/getblog/:id', {
 		templateUrl : 'views/blogdetails.html',
 		controller : 'BlogPostDetailsController'
 	})
@@ -56,6 +72,10 @@ app.config(function($routeProvider, $locationProvider) {
 	})
 
 	
+	 .when('/chat',{
+		templateUrl:'views/chat.html',
+		controller:'ChatCtrl'
+	})
 	
 	// route for the contact page
 	
